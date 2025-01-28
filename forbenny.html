@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Surprise</title>
+    <style>
+        body {
+            background-color: #fce4ec; /* Light pink background */
+            font-family: 'Comic Sans MS', sans-serif;
+            text-align: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .kirby {
+            font-family: monospace;
+            white-space: pre;
+            font-size: 14px;
+            line-height: 1;
+            margin: 10px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        .message {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #ff4081;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #f50057;
+        }
+        .hidden {
+            display: none;
+        }
+        /* Centering the heartfelt message */
+        .heartfelt-message {
+            font-size: 1.5em;
+            color: #ff4081;
+            margin-top: 20px;
+            display: none;
+            position: fixed; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            text-align: center; /* Ensure the text is centered inside the box */
+        }
+    </style>
+</head>
+<body>
+    <div id="page1" class="container">
+        <div class="kirby">
+            ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
+            ⬜⬜⬜⬜⬛⬛⬛⬛⬛⬜⬜
+            ⬜⬜⬛⬛🟥💮💮💮🟥⬛⬜
+            ⬜⬛🟥🟥💮💮💮💮💮🟥⬛
+            ⬛🟥💮💮🟪🟥💮🟪🟥💮🟪
+            ⬛🟥💮💮⬜⬛💮⬜⬛💮🟥
+            💮💮💮💮🟪⬛💮🟪⬛💮🟥
+            🟥💮🟪🟥🟥⬛💮🟥⬛🟥💮
+            ⬛🟥💮💮💮💮💮⬛💮💮💮
+            ⬛🟥🟥💮💮💮💮💮💮💮🟥
+            ⬛⬛🟪🟥💮💮💮💮💮🟥⬛
+            🟥⬜🟪🟪🟥🟥🟥🟪🟥🟪🟥
+            🟥🟥🟥🟪⬛⬛⬛⬛🟪🟥🟥
+            ⬛⬛⬛⬛⬛⬜⬜⬛⬛⬛⬛
+            ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
+                </div>
+        <div class="message">Hi, my love!</div>
+        <button class="button" onclick="nextPage(2)">Next</button>
+    </div>
+
+    <div id="page2" class="container hidden">
+        <div class="kirby">
+            💮💮💮💮💮💮💮💮💮💮💮
+            💮💮💮⬛💮💮💮⬛💮💮💮
+            💮💮⬛⬜⬛💮⬛⬜⬛💮💮
+            💮💮⬛⬛⬛💮⬛⬛⬛💮💮
+            💮💮⬛⬛⬛💮⬛⬛⬛💮💮
+            💮💮⬛🟦⬛💮⬛🟦⬛💮💮
+            💮💮💮⬛💮💮💮⬛💮💮💮
+            🟥🟥💮💮⬛⬛⬛💮💮🟥🟥
+            🟥🟥💮💮⬛🟥⬛💮💮🟥🟥
+            💮💮💮💮💮⬛💮💮💮💮💮
+            💮💮💮💮💮💮💮💮💮💮💮
+            💮💮💮💮💮💮💮💮💮💮💮
+                </div>
+        <div class="message">There's something I've been meaning to ask you...</div>
+        <button class="button" onclick="nextPage(3)">Next</button>
+    </div>
+
+    <div id="page3" class="container hidden">
+        <div class="kirby">
+            ⬜⬜⬛⬛⬜⬛⬛⬛⬛⬛⬜⬜⬜⬜⬜⬜
+            ⬜⬛⬜⬜⬛⬜⬜⬜⬜⬜⬛⬛⬜⬜⬜⬜
+            ⬛⬜⬜⬛⬜⬜⬜⬜⬜⬜⬜⬜⬛⬜⬜⬜
+            ⬛⬜⬜⬜⬜⬛⬜⬛⬜⬜⬜⬜⬜⬛⬜⬜
+            ⬛⬜⬜⬜⬜⬛⬜⬛⬜⬜⬜⬜⬜⬛⬜⬜
+            ⬛⬜⬜⬜⬜⬛⬜⬛⬜⬜⬜⬜⬜⬜⬛⬜
+            ⬛⬜⬜⬜⬜⬛⬜⬛⬜⬜⬜⬜⬜⬜⬜⬛
+            ⬜⬛⬜🟥🟥⬜⬜⬜🟥🟥⬜⬜⬜⬜⬜⬛
+            ⬜⬛⬜⬜⬜⬜⬛⬜⬜⬜⬜⬜⬛⬛⬛⬜
+            ⬜⬛⬜⬜⬜⬜⬛⬜⬜⬜⬜⬛⬜⬜⬜⬛
+            ⬜⬜⬛⬜⬜⬜⬜⬜⬜⬜⬛⬜⬜⬜⬜⬛
+            ⬜⬜⬛⬛⬜⬜⬜⬜⬜⬜⬛⬜⬜⬜⬜⬛
+            ⬜⬛⬜⬜⬛⬛⬜⬜⬜⬛⬜⬜⬜⬜⬛⬜
+            ⬛⬜⬜⬜⬜⬜⬛⬛⬛⬛⬛⬜⬜⬛⬜⬜
+            ⬜⬛⬛⬛⬛⬛⬛⬜⬜⬜⬛⬛⬛⬜⬜⬜
+                </div>
+        <div class="message">Will you be my Valentine? ❤️</div>
+        <button class="button" onclick="showResponse('yes')">Yes</button>
+        <button class="button" id="noButton" onclick="showResponse('no')">No</button>
+    </div>
+
+    <!-- Heartfelt message will appear here after "Yes" is clicked -->
+    <div id="heartfeltMessage" class="heartfelt-message">I’m so happy, and I’m so lucky to have you in my life. I cant wait to see you :3❤️</div>
+
+    <script>
+        // Functions to handle page navigation and responses
+        function nextPage(pageNumber) {
+            document.querySelectorAll('.container').forEach(page => page.classList.add('hidden'));
+            document.getElementById(`page${pageNumber}`).classList.remove('hidden');
+        }
+
+        function showResponse(answer) {
+            // Hide all pages and buttons
+            document.querySelectorAll('.container').forEach(page => page.classList.add('hidden'));
+            document.querySelector('.kirby').style.display = 'none'; // Hide animation
+
+            if (answer === 'no') {
+                // Display the "fuck you" message if No is clicked
+                const noMessage = document.createElement('div');
+                noMessage.style.fontSize = '2em';
+                noMessage.style.color = '#ff4081';
+                noMessage.style.position = 'fixed';
+                noMessage.style.top = '50%';
+                noMessage.style.left = '50%';
+                noMessage.style.transform = 'translate(-50%, -50%)';
+                noMessage.style.textAlign = 'center';
+                noMessage.textContent = 'Fuck you';
+                document.body.appendChild(noMessage);
+            } else {
+                // Show heartfelt message if Yes is clicked
+                document.getElementById('heartfeltMessage').style.display = 'block';
+                document.querySelector('.kirby').style.display = 'block'; // Keep the animation visible
+
+                // Hide the "No" and "Yes" buttons after "Yes" is clicked
+                document.getElementById('noButton').style.display = 'none';
+                document.querySelector('.button').style.display = 'none'; // Hide "Yes" button
+            }
+        }
+
+        // Expose functions to the global scope
+        window.nextPage = nextPage;
+        window.showResponse = showResponse;
+    </script>
+</body>
+</html>
